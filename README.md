@@ -1,15 +1,6 @@
-sudo nano /etc/systemd/logind.conf
+# Отключаем сокет-активацию
+sudo systemctl stop ssh.socket
+sudo systemctl disable ssh.socket
 
-#HandleLidSwitch=suspend
-#HandleLidSwitchExternalPower=suspend
-#HandleLidSwitchDocked=ignore
-
-HandleLidSwitch=ignore
-HandleLidSwitchExternalPower=ignore
-HandleLidSwitchDocked=ignore
-
-sudo systemctl restart systemd-logind
-
-gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 0
-
-sudo systemctl status ssh
+# Включаем обычную постоянную службу SSH
+sudo systemctl enable --now ssh.service

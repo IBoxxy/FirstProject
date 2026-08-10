@@ -1,1 +1,4 @@
-sudo rm -rf /var/lib/tailscale /etc/apt/sources.list.d/tailscale.list /usr/share/keyrings/tailscale-archive-keyring.gpg
+hostname -I
+whoami
+sudo systemctl status ssh --no-pager
+sudo ss -tulpn | grep :22

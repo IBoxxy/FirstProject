@@ -1,2 +1,1 @@
-sudo ufw allow in on tailscale0
-sudo ufw allow 22/tcp
+sudo rm -rf /var/lib/tailscale /etc/apt/sources.list.d/tailscale.list /usr/share/keyrings/tailscale-archive-keyring.gpg
